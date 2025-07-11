@@ -11,6 +11,7 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
     "sass": "^1.89.2",
     "sass-loader": "^13.0.0",
     "vite-plugin-vuetify": "^2.1.1",
