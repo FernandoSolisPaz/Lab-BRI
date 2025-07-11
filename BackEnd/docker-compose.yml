@@ -13,9 +13,24 @@ services:
     networks:
       - typesense_net
     restart: unless-stopped
+  
+  mongodb:
+    image: mongo:7
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASS:-secret}
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - typesense_net
+    restart: unless-stopped
 
 volumes:
   typesense-data:
+  mongo-data:
 
 networks:
   typesense_net:
