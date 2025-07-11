@@ -4,6 +4,7 @@ import TheWelcome from '../components/TheWelcome.vue'
 
 <template>
   <main>
-    <TheWelcome />
+    <v-btn text to="/newsmap">NEWSMAP</v-btn>
+    
   </main>
 </template>

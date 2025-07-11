@@ -118,9 +118,11 @@
             </v-row>
           </v-card-text>
         </v-card>
+        <RouterView />
       </v-container>
     </v-main>
   </v-app>
+
 </template>
 
 <script setup>
