@@ -24,8 +24,7 @@
                                     {{ noticia.texto.slice(0, 200) }}...
                                 </div>
                                 <div class="d-flex justify-end my-3">
-                                    <v-btn color="red" variant="elevated" size="small" :href="noticia.hipervinculo"
-                                        target="_blank">
+                                    <v-btn color="red" variant="elevated" size="small" :href="noticia.hipervinculo">
                                         Ver más
                                     </v-btn>
                                 </div>
@@ -57,7 +56,7 @@ export default {
         return {
             noticias: [
                 {
-                    titulo: "Asaltan a hombre en Cerro Navia: le robaron $2 millones en productos y lo balearon antes de huir",
+                    titulo: "Balacera en fiesta clandestina en Estación Central deja un muerto y al menos tres heridos",
                     fecha_extraccion: "2025-06-20 15:34:00",
                     fecha_publicacion: "2025-01-25 12:26:00",
                     keywords: [
@@ -65,14 +64,14 @@ export default {
                         "asalto a mano armada",
                         "robo"
                     ],
-                    pagina: "BioBio Chile",
-                    hipervinculo: "https://www.biobiochile.cl/noticias/nacional/region-metropolitana/2025/01/24/asaltan-a-hombre-en-cerro-navia-le-robaron-2-millones-en-productos-y-lo-balearon-antes-de-huir.shtml",
-                    texto: "Carabineros investiga un asalto al dueño de un furgón en Cerro Navia. La víctima resultó baleada, sufrió lesiones graves, pero está fuera de riesgo vital.\nEl hecho ocurrió en la intersección de las calles La Lenga con El Raulí.\nMientras el conductor entregaba productos de cosmética, al menos tres desconocidos en un vehículo lo interceptaron, cerrándole el paso. Dos de ellos descendieron y robaron la totalidad de los productos que transportaba.\nAl huir, los asaltantes dispararon al menos dos veces desde el vehículo, luego de que la víctima intentara resistirse al robo. Uno de los disparos impactó en el furgón, mientras que el otro alcanzó la rodilla izquierda del conductor.\nLa víctima fue trasladada al Hospital Félix Bulnes con una lesión grave, aunque está fuera de riesgo vital.\nDiligencias de Carabineros tras el asalto en Cerro Navia\nEl mayor de Carabineros, Rodrigo Inzunza, detalló que el suceso ocurrió alrededor de las 10:00 horas de esta mañana.\n“Podría haber existido algún tipo de seguimiento. No obstante, todo es materia de investigación”, expresó el mayor Inzunza.\nAdemás, señaló que los delincuentes robaron 36 cajas de productos, valoradas en aproximadamente $2 millones.\nLa SIP de Carabineros investiga el caso y busca localizar el vehículo usado por los delincuentes, así como identificar a los responsables. No se descarta que Labocar participe en las diligencias, pues aún se espera la instrucción del Ministerio Público.",
+                    pagina: "T13",
+                    hipervinculo: "http://localhost:5173/Newsview",
+                    texto: "Un hombre fue asesinado con arma de fuego y al menos otras tres personas resultaron heridas durante una balacera registrada al interior de una fiesta de carácter clandestino.",
                     autores: [
                         "Rodrigo Pino"
                     ],
                     ubicacion: "Cerro Navia",
-                    imagen: "https://media.biobiochile.cl/wp-content/uploads/2025/01/social-asalto-cerro-navia-disparos-hombre-baleado.png"
+                    imagen: "https://s.t13.cl/sites/default/files/styles/manualcrop_1600x800/public/t13/field-imagen/2025-06/Gs1TSRnXQAAIhIC.jpg.jpeg?itok=GkJRzWk4"
                 },
                 {
                     titulo: "Con bomba molotov atacan micro en Cerro Navia",

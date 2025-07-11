@@ -2,10 +2,21 @@
   <v-app>
     <!-- Header -->
     <v-app-bar color="#e53e3e" dark height="60" flat width="230%">
-      <v-toolbar-title class="text-h5 font-weight-bold">
-        DAILY SANTIAGO
-      </v-toolbar-title>
-    </v-app-bar>
+  <v-toolbar-title class="text-h5 font-weight-bold d-flex align-center">
+    <v-avatar 
+      size="40" 
+      class="mr-2" 
+      @click="$router.push('/')"
+      style="cursor: pointer;"
+    >
+      <v-img 
+        :src="logoUrl" 
+        alt="UrbanitApps Logo"
+      ></v-img>
+    </v-avatar>
+    DAILY SANTIAGO
+  </v-toolbar-title>
+</v-app-bar>
 
     <!-- Main Content -->
     <v-main>
@@ -128,6 +139,8 @@
 <script setup>
 import { ref, watch, computed } from 'vue'
 import 'primeicons/primeicons.css'
+import logoImage from './assets/urbanitappslogo.png'
+const logoUrl = logoImage
 
 // Reactive variables
 const selectedDate = ref(null)
