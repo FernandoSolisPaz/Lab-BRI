@@ -1,5 +1,9 @@
 import typesense
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configurar el cliente Typesense (conectarlo a docker)
 client = typesense.Client({
@@ -8,7 +12,7 @@ client = typesense.Client({
         'port': 8108,
         'protocol': 'http'
     }],
-    'api_key': 'xyz',
+    'api_key': (os.getenv("API_KEY_TYPESENSE")),
     'connection_timeout_seconds': 2
 })
 
@@ -19,8 +23,8 @@ schema = {
         {"name": "titulo", "type": "string"},
         {"name": "ubicacion", "type": "string"},
         {"name": "fecha_publicacion", "type": "string", "facet": True}
-    ],
-    "default_sorting_field": "fecha_publicacion"
+    ]
+    #"default_sorting_field": "titulo"
 }
 
 # Eliminar el índice si ya existe
@@ -39,7 +43,7 @@ for noticia in noticias:
 
 # EJ: Filtrar por ubicación con una búsqueda
 result = client.collections['noticias'].documents.search({
-    'q': 'Ñuñoa',
+    'q': 'Lo Espejo',
     'query_by': 'ubicacion'
 })
 
