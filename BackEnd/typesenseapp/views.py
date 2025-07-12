@@ -77,3 +77,25 @@ def listar_comunas(request):
         })
 
     return JsonResponse(response, safe=False)
+
+@csrf_exempt
+def obtener_comuna(request):
+    conn
+    print(conn)
+    nombre = request.GET.get("nombre")
+    comuna = comuna_service.obtener_comuna(nombre)
+    response = {
+        "nombre": comuna.nombre,
+        "geometria": comuna.geometria
+    }
+
+    return JsonResponse(response, safe=False)
+
+@csrf_exempt
+def crear_comuna(request):
+    conn
+    print(conn)
+    data = json.loads(request.body)
+    response = comuna_service.crear_comuna(data["nombre"], data["geometria"])
+    
+    return JsonResponse("ight", safe=False)

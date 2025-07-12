@@ -1,5 +1,8 @@
 from typesenseapp.repositories import comuna_repository
 
+def obtener_comuna(nombre: str):
+    return comuna_repository.obtener_comuna_por_nombre(nombre)
+
 def obtener_comuna_de_punto(long, lat):
     return comuna_repository.comuna_que_contiene_punto(long, lat)
 
