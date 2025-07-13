@@ -8,6 +8,15 @@ from .mongo import conn
 import typesense
 import json
 import os
+import time
+from datetime import datetime
+
+def epoch_day_range(dt: datetime):
+    """Devuelve el rango epoch de un día completo"""
+    start = datetime(dt.year, dt.month, dt.day, 0, 0, 0)
+    end = datetime(dt.year, dt.month, dt.day, 23, 59, 59)
+    return int(time.mktime(start.timetuple())), int(time.mktime(end.timetuple()))
+
 
 @csrf_exempt
 def buscar(request):
@@ -30,10 +39,21 @@ def buscar(request):
         if data.get('pagina'):
             filtros.append(f'pagina:={json.dumps(data["pagina"])}')
 
-        if isinstance(data.get('fecha_publicacion'), int):
-            filtros.append(f'fecha_publicacion:={data["fecha_publicacion"]}')
-        if isinstance(data.get('fecha_extraccion'), int):
-            filtros.append(f'fecha_extraccion:={data["fecha_extraccion"]}')
+        if data.get('exact_date'):
+            # Prioridad: exact_date ignora los otros dos
+            start_epoch, end_epoch = epoch_day_range(datetime.fromisoformat(data.get('exact_date')))
+            filtros.append(f"fecha_publicacion:[{start_epoch}..{end_epoch}]")
+        else:
+            if data.get('before_date') and data.get('after_date'):
+                be = int(time.mktime(datetime.fromisoformat(data.get('before_date')).timetuple()))
+                ae = int(time.mktime(datetime.fromisoformat(data.get('after_date')).timetuple()))
+                filtros.append(f"fecha_publicacion:[{ae}..{be}]")
+            elif data.get('before_date'):
+                be = int(time.mktime(datetime.fromisoformat(data.get('before_date')).timetuple()))
+                filtros.append(f"fecha_publicacion:<={be}")
+            elif data.get('after_date'):
+                ae = int(time.mktime(datetime.fromisoformat(data.get('after_date')).timetuple()))
+                filtros.append(f"fecha_publicacion:>={ae}")
 
         if data.get('keywords'):
             for kw in data['keywords']:
