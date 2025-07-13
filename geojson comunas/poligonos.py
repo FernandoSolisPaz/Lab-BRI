@@ -19,4 +19,4 @@ for comuna in archivos:
 
 for comuna in comunas:
     response = requests.post("http://localhost:8000/buscar/guardarComuna", json=comuna)
-    print(f"{comuna["nombre"]}: {response.status_code}: {response.text}")
+    print(f"{comuna['nombre']}: {response.status_code}: {response.text}")
