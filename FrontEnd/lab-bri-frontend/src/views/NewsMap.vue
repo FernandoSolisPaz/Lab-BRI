@@ -46,6 +46,7 @@
 
 <script>
 import Map from '../components/Map.vue'
+import appService from '@/services/app.service'
 
 export default {
     components: {
@@ -178,7 +179,9 @@ export default {
                     ubicacion: "Quilicura",
                     imagen: "https://www.latercera.com/resizer/v2/6MPARINIJ5BXDO6DMJN6RYHHXU.jpeg?auth=f597d2faa93a6d09ef9834c451a0f4a8eb2b0b9c1848a89f91b28e72fc8d3e15&smart=true&width=800&height=450&quality=70"
                 },
-            ]
+            ],
+
+            poligonos: []
         }
     },
 
@@ -195,6 +198,21 @@ export default {
             }
             return logos[pagina] || "https://i.pinimg.com/1200x/7b/71/35/7b7135945421f5d2a7e3b11830f8f227.jpg"
         },
+
+        obtenerPoligonos() {
+            // Se obtienen las tiendas
+            appService.listarComunas()
+                .then(response => {
+                    this.poligonos = response.data; // Asignamos los datos de la respuesta
+                    console.log("AQUI ESTAN LOS POLIGONOS: ", this.poligonos)
+                })
+                .catch(error => {
+                    console.error('Error al obtener los poligonos:', error); // Manejamos errores
+                });
+
+        },
+
+
         dibujarPoligonoPrueba() {
             const coords = [
                 [
@@ -902,6 +920,9 @@ export default {
         setTimeout(() => {
             this.dibujarPoligonoPrueba();
         }, 500);
+
+        this.obtenerPoligonos();
+
         // Puedes cargar datos desde API aquí si lo deseas
     }
 }
