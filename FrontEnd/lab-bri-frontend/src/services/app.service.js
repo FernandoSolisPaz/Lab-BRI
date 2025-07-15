@@ -10,7 +10,7 @@ const obtenerComuna = (nombre) => {
 }
 
 const buscarDocumento= (data) => {
-    return httpClient.get(`/buscar`, data);
+    return httpClient.post(`/buscar`, data);
 }
 
 export default {obtenerComuna, listarComunas, buscarDocumento};

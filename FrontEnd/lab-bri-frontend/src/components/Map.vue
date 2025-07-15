@@ -111,9 +111,11 @@ export default {
       this.circleGroup.addLayer(circle); // Agrega el círculo al grupo
     },
 
-    // Dibuja un polígono en el mapa
-    putPolygon(polygon, options = {}, invert = false, zoomToFit = true) {
-      this.polygonGroup.clearLayers();
+    putPolygon(polygon, options = {}, invert = false, zoomToFit = true, clearPrevious = true) {
+      // Solo limpia los polígonos previos si clearPrevious es verdadero
+      if (clearPrevious) {
+        this.polygonGroup.clearLayers();
+      }
 
       const defaultOptions = {
         color: "red",
@@ -124,7 +126,7 @@ export default {
       const mergedOptions = { ...defaultOptions, ...options };
 
       const coords = invert
-        ? polygon.map(coord => [coord[1], coord[0]])
+        ? polygon.map(coord => [coord[1], coord[0]])  // Invertir si es necesario
         : polygon;
 
       const leafletPolygon = L.polygon(coords, mergedOptions);
