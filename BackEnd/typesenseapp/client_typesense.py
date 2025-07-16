@@ -6,7 +6,7 @@ load_dotenv()
 
 client = typesense.Client({
     'nodes': [{
-        'host': 'localhost',
+        'host': os.getenv('TYPESENSE_HOST'),
         'port': 8108,
         'protocol': 'http'
     }],
