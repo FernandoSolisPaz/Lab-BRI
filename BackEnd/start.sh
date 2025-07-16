@@ -1,26 +1,42 @@
 #!/bin/bash
 
-# --- MongoDB ---
-# Si no está instalado, descargar y descomprimir portable MongoDB
-if ! command -v mongod > /dev/null; then
-  echo "Descargando MongoDB..."
-  wget -q https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-6.0.4.tgz
-  tar -xzf mongodb-linux-x86_64-ubuntu2004-6.0.4.tgz
-  export PATH=$PWD/mongodb-linux-x86_64-ubuntu2004-6.0.4/bin:$PATH
-fi
+set -e
 
-mkdir -p ./data/db
+echo "Actualizando repositorios e instalando dependencias..."
+sudo apt-get update -y
+sudo apt-get install -y wget curl gnupg libssl1.1 || {
+  echo "Error instalando dependencias. ¿Tienes permisos de sudo?"
+  exit 1
+}
 
-# Arrancar mongod en background
-mongod --dbpath ./data/db --bind_ip 127.0.0.1 --port 27017 --fork --logpath ./mongod.log
+echo "Agregando repositorio oficial de MongoDB 5.0..."
+wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 
-# --- Typesense ---
-# Descargar y ejecutar Typesense Server (ajusta versión y ruta)
-if [ ! -f typesense-server ]; then
-  wget -q https://dl.typesense.org/releases/0.24.0/typesense-server-linux-amd64.tar.gz
-  tar -xzf typesense-server-linux-amd64.tar.gz
-fi
+sudo apt-get update -y
+sudo apt-get install -y mongodb-org
 
+echo "Iniciando MongoDB..."
+sudo systemctl start mongod
+sudo systemctl enable mongod
+
+echo "Descargando Typesense .deb..."
+curl -O https://dl.typesense.org/releases/29.0/typesense-server-29.0-amd64.deb
+
+echo "Instalando Typesense..."
+sudo dpkg -i typesense-server-29.0-amd64.deb || sudo apt-get install -f -y
+
+echo "Eliminando paquete .deb..."
+rm typesense-server-29.0-amd64.deb
+
+echo "Iniciando Typesense en segundo plano..."
+nohup /usr/bin/typesense-server --data-dir /tmp/typesense-data --api-key=123 --listen-port=8108 > typesense.log 2>&1 &
+
+echo "Estado de MongoDB:"
+sudo systemctl status mongod --no-pager
+
+echo "Proceso Typesense:"
+ps aux | grep typesense-server
 # Ejecutar typesense-server en background
 ./typesense-server --data-dir ./typesense-data --api-key=123 > typesense.log 2>&1 &
 
