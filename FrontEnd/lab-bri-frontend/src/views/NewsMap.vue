@@ -40,26 +40,18 @@
                                     placeholder="Seleccionar fuente" hide-details
                                     @update:modelValue="onInputChange"></v-select>
                             </v-col>
-                            <v-col cols="12" md="2">
-                                <v-select v-model="selectedDocType" :items="['Selecciona...', ...docTypeOptions]"
-                                    label="Tipo de documento" variant="outlined" density="compact"
-                                    placeholder="Seleccionar tipo" hide-details
-                                    @update:modelValue="onInputChange"></v-select>
-                            </v-col>
-                            <v-col cols="12" md="2">
-                                <v-select v-model="selectedStatus" :items="['Selecciona...', ...statusOptions]"
-                                    label="Situación del caso" variant="outlined" density="compact"
-                                    placeholder="Seleccionar estado" hide-details
-                                    @update:modelValue="onInputChange"></v-select>
-                            </v-col>
                         </v-row>
 
                         <!-- Barra de búsqueda -->
                         <v-row class="mt-3">
                             <v-col cols="12" md="4">
                                 <v-text-field v-model="searchQuery" placeholder="Buscar noticias..." variant="outlined"
-                                    density="compact" clearable hide-details @update:modelValue="onInputChange">
+                                    density="compact" clearable hide-details @update:modelValue="onInputChange"
+                                            :style="{ borderColor: 'black' }">
                                     <template #prepend-inner>
+                                        <i class="pi pi-search"></i>
+                                    </template>
+                                    <template #append-inner>
                                         <i class="pi pi-search"></i>
                                     </template>
                                 </v-text-field>
@@ -147,17 +139,23 @@ export default {
             selectedDocType: null,
             selectedStatus: null,
             searchQuery: '',
-            comunaOptions: ['Estación Central', 'Santiago', 'Las Condes', 'Providencia', 'Ñuñoa', 'Maipú', 'Quilicura'],
+            comunaOptions: ['Estación Central', 'Santiago', 'Las Condes', 'Providencia', 'Nunoa', 'Maipú', 'Quilicura', 'Cerro Navia', 'Lo Barnechea', 'Vitacura', 'Lo Espejo', 'Recoleta', ],
             crimeTypeOptions: ['Homicidio', 'Robo', 'Hurto', 'Violencia intrafamiliar', 'Tráfico de drogas', 'Fallecido'],
-            agencyOptions: ['PDI', 'Carabineros', 'Fiscalía', 'ECOH', 'T13'],
-            docTypeOptions: ['Noticia', 'Reportaje', 'Entrevista', 'Comunicado'],
-            statusOptions: ['En investigación', 'Resuelto', 'Archivado', 'En proceso'],
+            agencyOptions: ['PDI', 'Carabineros', 'Fiscalía', 'ECOH', 'T13', 'BioBio Chile', 'Radio Duna', 'Radio Cooperativa', 'El Dinamo', 'La Tercera', 'Emol', 'Radio ADN', 'CNN Chile']
         }
     },
 
     methods: {
         getLogo(pagina) {
             const logos = {
+                "PDI": "https://upload.wikimedia.org/wikipedia/commons/9/97/Polic%C3%ADa_de_Investigaciones_de_Chile_%28PDI%29_01.jpg",
+                "Carabineros": "https://images.steamusercontent.com/ugc/2126318308534247985/D2B95F860D2D88AD6AC0A2C201CE4C25D61BCA73/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                "Fiscalía": "https://pbs.twimg.com/profile_images/1807767458452803584/mVWy65iB_400x400.jpg",
+                "ECOH": "https://santacruzfm.cl/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2023-11-14-at-16.42.07-qq3ithcoq1l2lft14p0p7dr87v7qdqicxqgfngosyu.jpeg",
+                "Radio Duna": "https://cdn-profiles.tunein.com/s25108/images/logog.jpg?t=155673",
+                "El Dinamo": "https://www.eldinamo.cl/_templates/globals/img/logo.jpg",
+                "Emol": "https://pbs.twimg.com/profile_images/816281345747980288/XtL97I6M_400x400.jpg",
+                "Radio ADN": "https://p16-common-sign-va.tiktokcdn-us.com/tos-maliva-avt-0068/5da1a2716098c787c0f3878f26c461d0~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=205c0e40&x-expires=1752746400&x-signature=3VJHJPvvOOjcvt8Y2DnfA0XNsOc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
                 "BioBio Chile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxaKtXVa_5rXYa3Jv-L65j6h9xNofU4oeTkw&s",
                 "CNN Chile": "https://upload.wikimedia.org/wikipedia/commons/0/04/Logo_cnnchile.png",
                 "La Tercera": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzn9W65Z27kiAcLB-2YZysqTSS_EDoqvCtng&s",
