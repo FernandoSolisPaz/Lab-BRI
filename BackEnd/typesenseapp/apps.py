@@ -18,7 +18,7 @@ class TypesenseappConfig(AppConfig):
 
         client = typesense.Client({
             'nodes': [{
-                'host': 'localhost',
+                'host': os.getenv('TYPESENSE_HOST'),
                 'port': 8108,
                 'protocol': 'http'
             }],

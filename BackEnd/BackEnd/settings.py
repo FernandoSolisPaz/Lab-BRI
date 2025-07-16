@@ -25,10 +25,10 @@ SECRET_KEY = 'django-insecure-3c$nyey+v@4go#2swe-yhu!4!f+&+wx#fe1usx09z$b@9-$gpr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lab-bri.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
-# Application definition
+# Application definitioncom
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'es-mx'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
