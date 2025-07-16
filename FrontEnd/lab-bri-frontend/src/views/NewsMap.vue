@@ -7,18 +7,44 @@
                 <v-card color="white" elevation="1" flat class="pa-4 w-100">
                     <v-card-text class="pa-4">
                         <v-row>
+                            <v-col cols="12" md="3">
+                                <div class="d-flex align-center">
+                                    <v-menu class="flex-grow-1" v-model="dateMenuStart" :close-on-content-click="false" transition="scale-transition"
+                                    offset-y content-class="compact-datepicker-menu">
+                                    <template #activator="{ props }"> <v-text-field v-bind="props" v-model="formattedStartDate" label="Seleccionar fecha inicial"
+                                        readonly density="compact" hide-details @update:modelValue="onInputChange">
+                                        <template #prepend-inner>
+                                            <i class="pi pi-calendar-clock" />
+                                        </template>
+                                        </v-text-field>
+                                    </template>
+                                    <v-date-picker v-model="selectedStartDate" @update:model-value="dateMenuStart = false" :show-adjacent-months="false"
+                                        hide-header @update:modelValue="onInputChange"/>
+                                    </v-menu>
+                                    <v-tooltip bottom>
+                                    <template #activator="{ props, on }">
+                                        <v-icon v-bind="props" v-on="on" class="ml-2" small>
+                                            mdi-help-circle-outline
+                                        </v-icon>
+                                    </template>
+                                    <span>
+                                        En caso de seleccionar únicamente fecha inicial, se tomará como fecha exacta de búsqueda
+                                    </span>
+                                    </v-tooltip>
+                                </div>
+                            </v-col>
                             <v-col cols="12" md="2">
-                                <v-menu v-model="dateMenu" :close-on-content-click="false" transition="scale-transition"
+                                <v-menu v-model="dateMenuEnd" :close-on-content-click="false" transition="scale-transition"
                                     offset-y content-class="compact-datepicker-menu">
                                     <template v-slot:activator="{ props }">
-                                        <v-text-field v-bind="props" v-model="formattedDate" label="Seleccionar fecha"
+                                        <v-text-field v-bind="props" v-model="formattedEndDate" label="Seleccionar fecha final" :disabled="!selectedStartDate"
                                             readonly density="compact" hide-details @update:modelValue="onInputChange">
                                             <template #prepend-inner>
                                                 <i class="pi pi-calendar-clock"></i>
                                             </template>
                                         </v-text-field>
                                     </template>
-                                    <v-date-picker v-model="selectedDate" @update:model-value="dateMenu = false"
+                                    <v-date-picker v-model="selectedEndDate" @update:model-value="dateMenuEnd = false"
                                         :show-adjacent-months="false" hide-header
                                         @update:modelValue="onInputChange"></v-date-picker>
                                 </v-menu>
@@ -131,8 +157,10 @@ export default {
             noticiaSeleccionada: null,
 
             poligonos: [],
-            dateMenu: false,
-            selectedDate: null,
+            dateMenuStart: false,
+            dateMenuEnd: false,
+            selectedStartDate: null,
+            selectedEndDate: null,
             selectedComuna: null,
             selectedCrimeType: null,
             selectedAgency: null,
@@ -141,7 +169,9 @@ export default {
             searchQuery: '',
             comunaOptions: ['Estación Central', 'Santiago', 'Las Condes', 'Providencia', 'Nunoa', 'Maipú', 'Quilicura', 'Cerro Navia', 'Lo Barnechea', 'Vitacura', 'Lo Espejo', 'Recoleta', ],
             crimeTypeOptions: ['Homicidio', 'Robo', 'Hurto', 'Violencia intrafamiliar', 'Tráfico de drogas', 'Fallecido'],
-            agencyOptions: ['PDI', 'Carabineros', 'Fiscalía', 'ECOH', 'T13', 'BioBio Chile', 'Radio Duna', 'Radio Cooperativa', 'El Dinamo', 'La Tercera', 'Emol', 'Radio ADN', 'CNN Chile']
+            agencyOptions: ['PDI', 'Carabineros', 'Fiscalía', 'ECOH', 'T13', 'BioBio Chile', 'Radio Duna', 'Radio Cooperativa', 'El Dinamo', 'La Tercera', 'Emol', 'Radio ADN', 'CNN Chile'],
+            formattedStartDate: '',
+            formattedEndDate: '',
         }
     },
 
@@ -238,6 +268,16 @@ export default {
                 before_date: "",
             };
 
+             // Si solo hay fecha "Desde" seleccionada → exact_date
+            if (this.selectedStartDate && !this.selectedEndDate) {
+                query.exact_date = this.selectedStartDate;
+            }
+            // Si hay rango completo → after_date = Desde, before_date = Hasta
+            else if (this.selectedStartDate && this.selectedEndDate) {
+                query.after_date  = this.selectedStartDate;
+                query.before_date = this.selectedEndDate;
+            }
+
             console.log("ESTA ES LA QUERY: ", query);
 
             appService.buscarDocumento(query)
@@ -271,15 +311,17 @@ export default {
     },
 
     computed: {
-        formattedDate() {
-            if (!this.selectedDate) return '';
-            const date = new Date(this.selectedDate);
-            const day = String(date.getDate()).padStart(2, '0');
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const year = date.getFullYear();
-            return `${day}/${month}/${year}`;
+        formattedStartDate() {
+            if (!this.selectedStartDate) return ''
+            const d = new Date(this.selectedStartDate)
+            return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`
+        },
+        formattedEndDate() {
+            if (!this.selectedEndDate) return ''
+            const d = new Date(this.selectedEndDate)
+            return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`
         }
-    }
+    },
 }
 </script>
 
