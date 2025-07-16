@@ -15,7 +15,7 @@ const router = createRouter({
       path: '/newsview',
       name: 'newsview',
       component: NewsView,
-    }
+    },
   ],
 })
 

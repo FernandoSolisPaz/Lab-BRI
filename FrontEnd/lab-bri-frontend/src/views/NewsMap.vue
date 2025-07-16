@@ -100,7 +100,7 @@
                                         {{ noticia.document.texto.slice(0, 200) }}...
                                     </div>
                                     <div class="d-flex justify-end my-3">
-                                        <v-btn color="red" variant="elevated" size="small" :href="noticia.hipervinculo">
+                                        <v-btn color="red" variant="elevated" size="small" @click="verMas(noticia)">
                                             Ver más
                                         </v-btn>
                                     </div>
@@ -136,6 +136,7 @@ export default {
             noticias: [
 
             ],
+            noticiaSeleccionada: null,
 
             poligonos: [],
             dateMenu: false,
@@ -166,6 +167,15 @@ export default {
                 "T13": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Logotipo_de_Teletrece.svg/1200px-Logotipo_de_Teletrece.svg.png",
             }
             return logos[pagina] || "https://i.pinimg.com/1200x/7b/71/35/7b7135945421f5d2a7e3b11830f8f227.jpg"
+        },
+
+        verMas(noticia) {
+            this.noticiaSeleccionada = noticia;
+            console.log("Noticia seleccionada: ", this.noticiaSeleccionada.document.titulo);
+
+            localStorage.setItem('noticiaSeleccionada', JSON.stringify(noticia.document));
+
+            this.$router.push({ name: 'newsview' });
         },
 
         async obtenerPoligonos() {
@@ -218,7 +228,7 @@ export default {
         },
 
         onInputChange() {
-            console.log("Se ha realizado un cambio en los filtrossssssssssssssss.");
+            console.log("Se ha realizado un cambio en los filtros.");
             const query = {
                 texto: this.searchQuery || "",
                 pagina: this.selectedAgency === "Selecciona..." ? "" : this.selectedAgency || "",
