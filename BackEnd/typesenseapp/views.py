@@ -10,6 +10,7 @@ import json
 import os
 import time
 from datetime import datetime
+import unicodedata
 
 def epoch_day_range(dt: datetime):
     """Devuelve el rango epoch de un día completo"""
@@ -33,11 +34,11 @@ def buscar(request):
         filtros = []
 
         if data.get('titulo'):
-            filtros.append(f'titulo:={json.dumps(data["titulo"])}')
+            filtros.append(f'titulo:={data["titulo"]}')
         if data.get('ubicacion'):
-            filtros.append(f'ubicacion:={json.dumps(data["ubicacion"])}')
+            filtros.append(f'ubicacion:={data.get('ubicacion')}')
         if data.get('pagina'):
-            filtros.append(f'pagina:={json.dumps(data["pagina"])}')
+            filtros.append(f'pagina:={data["pagina"]}')
 
         if data.get('exact_date'):
             # Prioridad: exact_date ignora los otros dos
@@ -58,12 +59,12 @@ def buscar(request):
         if data.get('keywords'):
             for kw in data['keywords']:
                 if kw:
-                    filtros.append(f'keywords:=[{json.dumps(kw)}]')
+                    filtros.append(f'keywords:=[{kw}]')
 
         if data.get('autores'):
             for autor in data['autores']:
                 if autor:
-                    filtros.append(f'autores:=[{json.dumps(autor)}]')
+                    filtros.append(f'autores:=[{autor}]')
 
 
         filtro_final = " && ".join(filtros) if filtros else None
