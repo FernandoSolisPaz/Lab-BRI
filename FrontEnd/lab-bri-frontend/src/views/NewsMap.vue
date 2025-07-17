@@ -262,10 +262,16 @@ export default {
             });
         },
 
-        resaltarSeleccionada() {
+        resaltarSeleccionada(oldVal) {
             if (!this.selectedComuna) return;
             const sel = this.poligonos.find(p => p.nombre === this.selectedComuna);
+            const prevcomuna = this.poligonos.find(p => p.nombre === oldVal);
             if (!sel) return;
+            console.log(prevcomuna)
+            if (oldVal){
+                this.$refs.map.removePolygonByComuna(oldVal);
+            
+            }
             this.dibujarPoligono(sel.geometria.coordinates[0], 'purple', false, sel.nombre);
         },
 
@@ -314,14 +320,14 @@ export default {
     
     watch: {
     selectedComuna(newVal, oldVal) {
-        this.dibujarTodasBase();
 
-        this.resaltarSeleccionada();
+        this.resaltarSeleccionada(oldVal);
         }
     },
 
     mounted() {
         this.obtenerPoligonos();
+        this.dibujarTodasBase();
 
     },
 

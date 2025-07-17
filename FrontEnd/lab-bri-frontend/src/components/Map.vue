@@ -111,6 +111,20 @@ export default {
       this.circleGroup.addLayer(circle); // Agrega el círculo al grupo
     },
 
+    removePolygonByComuna(comunaNombre) {
+
+      let leafletId = null;
+
+      this.polygonGroup.eachLayer(layer => {
+        if (layer._comunaNombre === comunaNombre) {
+          console.log(layer._comunaNombre)
+          leafletId = layer._leaflet_id;
+        }
+      });
+      console.log('Este es el idLEAF de la comuna a eliminar:', leafletId)
+      this.polygonGroup.removeLayer(leafletId);
+    },
+
     putPolygon(polygon, options = {}, invert = false, zoomToFit = true, clearPrevious = true, comunaNombre = null) {
       // Solo limpia los polígonos previos si clearPrevious es verdadero
       if (clearPrevious) {
@@ -130,6 +144,7 @@ export default {
         : polygon;
 
       const leafletPolygon = L.polygon(coords, mergedOptions);
+      leafletPolygon._comunaNombre = comunaNombre;
 
         if (comunaNombre) {
           leafletPolygon.on('click', () => {
