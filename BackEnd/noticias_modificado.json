@@ -485,5 +485,629 @@
         ],
         "ubicacion": "Santiago",
         "imagen": "//static.emol.cl/emol50/Fotos/2025/06/11/file_20250611072830.jpg"
+    },
+    {
+        "titulo": "Violento robo en local comercial deja un herido en Cerrillos",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751632387,
+        "keywords": [
+            "robo"
+        ],
+        "pagina": "BioBio Chile",
+        "hipervinculo": "https://www.biobiochile.cl",
+        "texto": "Tres sujetos armados ingresaron a un minimarket en Cerrillos, intimidando a los trabajadores y llevándose dinero en efectivo. Uno de los clientes resultó herido durante el asalto.",
+        "autores": [
+            "L. Pérez"
+        ],
+        "ubicacion": "Cerrillos",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJm6xMwwQfsCuxalDN4tppnArZl4dnrxohfQ&s"
+    },
+    {
+        "titulo": "Allanamiento en Cerrillos termina con decomiso de droga y armas",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750941187,
+        "keywords": [
+            "trafico de drogas"
+        ],
+        "pagina": "La Tercera",
+        "hipervinculo": "https://www.latercera.com",
+        "texto": "Un operativo de la PDI permitió desarticular un punto de venta de drogas en la comuna de Cerrillos, incautando cocaína, marihuana y armamento de fuego. Dos personas fueron detenidas.",
+        "autores": [
+            "F. Soto"
+        ],
+        "ubicacion": "Cerrillos",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8tqXzu2s0cWyVluNyaJXo1I4gGJ7g5d3Yw&s"
+    },
+    {
+        "titulo": "Encuentran cadáver en sitio eriazo de Conchalí",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751803987,
+        "keywords": [
+            "fallecido"
+        ],
+        "pagina": "T13",
+        "hipervinculo": "https://www.t13.cl",
+        "texto": "Vecinos alertaron a Carabineros por el hallazgo de un cuerpo sin vida en un terreno baldío de la comuna de Conchalí. La Brigada de Homicidios trabaja para identificar a la víctima y esclarecer la causa de muerte.",
+        "autores": [
+            "A. Martínez"
+        ],
+        "ubicacion": "Conchalí",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbB11dSXftc9k4V13lLJdvI_H7ghmCgh-FSA&s"
+    },
+    {
+        "titulo": "Hombre es asesinado a balazos en plena vía pública en Conchalí",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751373187,
+        "keywords": [
+            "homicidio"
+        ],
+        "pagina": "Radio Cooperativa",
+        "hipervinculo": "https://www.cooperativa.cl",
+        "texto": "La policía investiga el homicidio ocurrido anoche en la comuna de Conchalí, donde un hombre fue atacado con múltiples disparos. La víctima falleció en el lugar y se presume que se trató de un ajuste de cuentas.",
+        "autores": [
+            "A. Martínez"
+        ],
+        "ubicacion": "Conchalí",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UncChsJObvnHhasemVyNUP26RBhfVe-WdQ&s"
+    },
+    {
+        "titulo": "Violento robo en local comercial deja un herido en El Bosque",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750595587,
+        "keywords": [
+            "robo"
+        ],
+        "pagina": "CNN Chile",
+        "hipervinculo": "https://www.cnnchile.com",
+        "texto": "Tres sujetos armados ingresaron a un minimarket en El Bosque, intimidando a los trabajadores y llevándose dinero en efectivo. Uno de los clientes resultó herido durante el asalto.",
+        "autores": [
+            "A. Martínez"
+        ],
+        "ubicacion": "El Bosque",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJm6xMwwQfsCuxalDN4tppnArZl4dnrxohfQ&s"
+    },
+    {
+        "titulo": "Detienen a pareja por hurto de productos electrónicos en supermercado de El Bosque",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751717587,
+        "keywords": [
+            "hurto"
+        ],
+        "pagina": "Radio Duna",
+        "hipervinculo": "https://www.duna.cl",
+        "texto": "Carabineros logró la detención de dos personas que sustrajeron artículos electrónicos desde un supermercado en la comuna de El Bosque. Los imputados fueron sorprendidos gracias a las cámaras de seguridad del local.",
+        "autores": [
+            "A. Martínez"
+        ],
+        "ubicacion": "El Bosque",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh6Ingi_SZu5we6vexZLrne54gXbDPZsoQWw&s"
+    },
+    {
+        "titulo": "Hombre es asesinado a balazos en plena vía pública en Estación Central",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750767187,
+        "keywords": [
+            "homicidio"
+        ],
+        "pagina": "Emol",
+        "hipervinculo": "https://www.emol.com",
+        "texto": "La policía investiga el homicidio ocurrido anoche en la comuna de Estación Central, donde un hombre fue atacado con múltiples disparos. La víctima falleció en el lugar y se presume que se trató de un ajuste de cuentas.",
+        "autores": [
+            "F. Soto"
+        ],
+        "ubicacion": "Estación Central",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UncChsJObvnHhasemVyNUP26RBhfVe-WdQ&s"
+    },
+    {
+        "titulo": "Hombre es detenido por violencia intrafamiliar en Estación Central",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751373187,
+        "keywords": [
+            "violencia intrafamiliar"
+        ],
+        "pagina": "CHV Noticias",
+        "hipervinculo": "https://www.chvnoticias.cl",
+        "texto": "Carabineros acudió a un domicilio en Estación Central, tras una denuncia de vecinos por gritos y golpes. Un hombre fue arrestado por agredir a su pareja al interior del hogar.",
+        "autores": [
+            "C. González"
+        ],
+        "ubicacion": "Estación Central",
+        "imagen": "https://colombia.unir.net/wp-content/uploads/sites/4/2024/08/En-que-consiste-la-violencia-familiar3.jpg"
+    },
+    {
+        "titulo": "Hombre es asesinado a balazos en plena vía pública en Huechuraba",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1752062387,
+        "keywords": [
+            "homicidio"
+        ],
+        "pagina": "ECOH",
+        "hipervinculo": "https://www.ecoh.cl",
+        "texto": "La policía investiga el homicidio ocurrido anoche en la comuna de Huechuraba, donde un hombre fue atacado con múltiples disparos. La víctima falleció en el lugar y se presume que se trató de un ajuste de cuentas.",
+        "autores": [
+            "C. González"
+        ],
+        "ubicacion": "Huechuraba",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UncChsJObvnHhasemVyNUP26RBhfVe-WdQ&s"
+    },
+    {
+        "titulo": "Violento robo en local comercial deja un herido en Huechuraba",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750941187,
+        "keywords": [
+            "robo"
+        ],
+        "pagina": "Mega Noticias",
+        "hipervinculo": "https://www.meganoticias.cl",
+        "texto": "Tres sujetos armados ingresaron a un minimarket en Huechuraba, intimidando a los trabajadores y llevándose dinero en efectivo. Uno de los clientes resultó herido durante el asalto.",
+        "autores": [
+            "C. González"
+        ],
+        "ubicacion": "Huechuraba",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJm6xMwwQfsCuxalDN4tppnArZl4dnrxohfQ&s"
+    },
+    {
+        "titulo": "Detienen a pareja por hurto de productos electrónicos en supermercado de Independencia",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751632387,
+        "keywords": [
+            "hurto"
+        ],
+        "pagina": "Radio ADN",
+        "hipervinculo": "https://www.adnradio.cl",
+        "texto": "Carabineros logró la detención de dos personas que sustrajeron artículos electrónicos desde un supermercado en la comuna de Independencia. Los imputados fueron sorprendidos gracias a las cámaras de seguridad del local.",
+        "autores": [
+            "C. González"
+        ],
+        "ubicacion": "Independencia",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh6Ingi_SZu5we6vexZLrne54gXbDPZsoQWw&s"
+    },
+    {
+        "titulo": "Encuentran cadáver en sitio eriazo de La Cisterna",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751975987,
+        "keywords": [
+            "fallecido"
+        ],
+        "pagina": "El Dinamo",
+        "hipervinculo": "https://www.eldinamo.cl",
+        "texto": "Vecinos alertaron a Carabineros por el hallazgo de un cuerpo sin vida en un terreno baldío de la comuna de La Cisterna. La Brigada de Homicidios trabaja para identificar a la víctima y esclarecer la causa de muerte.",
+        "autores": [
+            "M. Rojas"
+        ],
+        "ubicacion": "La Cisterna",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbB11dSXftc9k4V13lLJdvI_H7ghmCgh-FSA&s"
+    },
+    {
+        "titulo": "Hombre es detenido por violencia intrafamiliar en La Cisterna",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750509187,
+        "keywords": [
+            "violencia intrafamiliar"
+        ],
+        "pagina": "BioBio Chile",
+        "hipervinculo": "https://www.biobiochile.cl",
+        "texto": "Carabineros acudió a un domicilio en La Cisterna, tras una denuncia de vecinos por gritos y golpes. Un hombre fue arrestado por agredir a su pareja al interior del hogar.",
+        "autores": [
+            "M. Rojas"
+        ],
+        "ubicacion": "La Cisterna",
+        "imagen": "https://colombia.unir.net/wp-content/uploads/sites/4/2024/08/En-que-consiste-la-violencia-familiar3.jpg"
+    },
+    {
+        "titulo": "Hombre es asesinado a balazos en plena vía pública en La Florida",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751632387,
+        "keywords": [
+            "homicidio"
+        ],
+        "pagina": "T13",
+        "hipervinculo": "https://www.t13.cl",
+        "texto": "La policía investiga el homicidio ocurrido anoche en la comuna de La Florida, donde un hombre fue atacado con múltiples disparos. La víctima falleció en el lugar y se presume que se trató de un ajuste de cuentas.",
+        "autores": [
+            "F. Soto"
+        ],
+        "ubicacion": "La Florida",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UncChsJObvnHhasemVyNUP26RBhfVe-WdQ&s"
+    },
+    {
+        "titulo": "Hombre es asesinado a balazos en plena vía pública en La Florida",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1752062387,
+        "keywords": [
+            "homicidio"
+        ],
+        "pagina": "La Tercera",
+        "hipervinculo": "https://www.latercera.com",
+        "texto": "La policía investiga el homicidio ocurrido anoche en la comuna de La Florida, donde un hombre fue atacado con múltiples disparos. La víctima falleció en el lugar y se presume que se trató de un ajuste de cuentas.",
+        "autores": [
+            "B. Olivares"
+        ],
+        "ubicacion": "La Florida",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UncChsJObvnHhasemVyNUP26RBhfVe-WdQ&s"
+    },
+    {
+        "titulo": "Encuentran cadáver en sitio eriazo de La Granja",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751889587,
+        "keywords": [
+            "fallecido"
+        ],
+        "pagina": "Radio Cooperativa",
+        "hipervinculo": "https://www.cooperativa.cl",
+        "texto": "Vecinos alertaron a Carabineros por el hallazgo de un cuerpo sin vida en un terreno baldío de la comuna de La Granja. La Brigada de Homicidios trabaja para identificar a la víctima y esclarecer la causa de muerte.",
+        "autores": [
+            "B. Olivares"
+        ],
+        "ubicacion": "La Granja",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbB11dSXftc9k4V13lLJdvI_H7ghmCgh-FSA&s"
+    },
+    {
+        "titulo": "Allanamiento en La Pintana termina con decomiso de droga y armas",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750163587,
+        "keywords": [
+            "trafico de drogas"
+        ],
+        "pagina": "CNN Chile",
+        "hipervinculo": "https://www.cnnchile.com",
+        "texto": "Un operativo de la PDI permitió desarticular un punto de venta de drogas en la comuna de La Pintana, incautando cocaína, marihuana y armamento de fuego. Dos personas fueron detenidas.",
+        "autores": [
+            "C. González"
+        ],
+        "ubicacion": "La Pintana",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8tqXzu2s0cWyVluNyaJXo1I4gGJ7g5d3Yw&s"
+    },
+    {
+        "titulo": "Hombre es asesinado a balazos en plena vía pública en La Reina",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751717587,
+        "keywords": [
+            "homicidio"
+        ],
+        "pagina": "Emol",
+        "hipervinculo": "https://www.emol.com",
+        "texto": "La policía investiga el homicidio ocurrido anoche en la comuna de La Reina, donde un hombre fue atacado con múltiples disparos. La víctima falleció en el lugar y se presume que se trató de un ajuste de cuentas.",
+        "autores": [
+            "F. Soto"
+        ],
+        "ubicacion": "La Reina",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UncChsJObvnHhasemVyNUP26RBhfVe-WdQ&s"
+    },
+    {
+        "titulo": "Hombre es detenido por violencia intrafamiliar en Las Condes",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750422787,
+        "keywords": [
+            "violencia intrafamiliar"
+        ],
+        "pagina": "CHV Noticias",
+        "hipervinculo": "https://www.chvnoticias.cl",
+        "texto": "Carabineros acudió a un domicilio en Las Condes, tras una denuncia de vecinos por gritos y golpes. Un hombre fue arrestado por agredir a su pareja al interior del hogar.",
+        "autores": [
+            "A. Martínez"
+        ],
+        "ubicacion": "Las Condes",
+        "imagen": "https://colombia.unir.net/wp-content/uploads/sites/4/2024/08/En-que-consiste-la-violencia-familiar3.jpg"
+    },
+    {
+        "titulo": "Detienen a pareja por hurto de productos electrónicos en supermercado de Las Condes",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1752672787,
+        "keywords": [
+            "hurto"
+        ],
+        "pagina": "Radio Duna",
+        "hipervinculo": "https://www.duna.cl",
+        "texto": "Carabineros logró la detención de dos personas que sustrajeron artículos electrónicos desde un supermercado en la comuna de Las Condes. Los imputados fueron sorprendidos gracias a las cámaras de seguridad del local.",
+        "autores": [
+            "A. Martínez"
+        ],
+        "ubicacion": "Las Condes",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh6Ingi_SZu5we6vexZLrne54gXbDPZsoQWw&s"
+    },
+    {
+        "titulo": "Allanamiento en Lo Prado termina con decomiso de droga y armas",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1752499987,
+        "keywords": [
+            "trafico de drogas"
+        ],
+        "pagina": "ECOH",
+        "hipervinculo": "https://www.ecoh.cl",
+        "texto": "Un operativo de la PDI permitió desarticular un punto de venta de drogas en la comuna de Lo Prado, incautando cocaína, marihuana y armamento de fuego. Dos personas fueron detenidas.",
+        "autores": [
+            "M. Rojas"
+        ],
+        "ubicacion": "Lo Prado",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8tqXzu2s0cWyVluNyaJXo1I4gGJ7g5d3Yw&s"
+    },
+    {
+        "titulo": "Hombre es detenido por violencia intrafamiliar en Lo Prado",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751975987,
+        "keywords": [
+            "violencia intrafamiliar"
+        ],
+        "pagina": "Mega Noticias",
+        "hipervinculo": "https://www.meganoticias.cl",
+        "texto": "Carabineros acudió a un domicilio en Lo Prado, tras una denuncia de vecinos por gritos y golpes. Un hombre fue arrestado por agredir a su pareja al interior del hogar.",
+        "autores": [
+            "L. Pérez"
+        ],
+        "ubicacion": "Lo Prado",
+        "imagen": "https://colombia.unir.net/wp-content/uploads/sites/4/2024/08/En-que-consiste-la-violencia-familiar3.jpg"
+    },
+    {
+        "titulo": "Hombre es detenido por violencia intrafamiliar en Macul",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750249987,
+        "keywords": [
+            "violencia intrafamiliar"
+        ],
+        "pagina": "Radio ADN",
+        "hipervinculo": "https://www.adnradio.cl",
+        "texto": "Carabineros acudió a un domicilio en Macul, tras una denuncia de vecinos por gritos y golpes. Un hombre fue arrestado por agredir a su pareja al interior del hogar.",
+        "autores": [
+            "L. Pérez"
+        ],
+        "ubicacion": "Macul",
+        "imagen": "https://colombia.unir.net/wp-content/uploads/sites/4/2024/08/En-que-consiste-la-violencia-familiar3.jpg"
+    },
+    {
+        "titulo": "Encuentran cadáver en sitio eriazo de Maipú",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1752148787,
+        "keywords": [
+            "fallecido"
+        ],
+        "pagina": "El Dinamo",
+        "hipervinculo": "https://www.eldinamo.cl",
+        "texto": "Vecinos alertaron a Carabineros por el hallazgo de un cuerpo sin vida en un terreno baldío de la comuna de Maipú. La Brigada de Homicidios trabaja para identificar a la víctima y esclarecer la causa de muerte.",
+        "autores": [
+            "B. Olivares"
+        ],
+        "ubicacion": "Maipú",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbB11dSXftc9k4V13lLJdvI_H7ghmCgh-FSA&s"
+    },
+    {
+        "titulo": "Encuentran cadáver en sitio eriazo de Maipú",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750680787,
+        "keywords": [
+            "fallecido"
+        ],
+        "pagina": "BioBio Chile",
+        "hipervinculo": "https://www.biobiochile.cl",
+        "texto": "Vecinos alertaron a Carabineros por el hallazgo de un cuerpo sin vida en un terreno baldío de la comuna de Maipú. La Brigada de Homicidios trabaja para identificar a la víctima y esclarecer la causa de muerte.",
+        "autores": [
+            "C. González"
+        ],
+        "ubicacion": "Maipú",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbB11dSXftc9k4V13lLJdvI_H7ghmCgh-FSA&s"
+    },
+    {
+        "titulo": "Allanamiento en Pedro Aguirre Cerda termina con decomiso de droga y armas",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750336387,
+        "keywords": [
+            "trafico de drogas"
+        ],
+        "pagina": "T13",
+        "hipervinculo": "https://www.t13.cl",
+        "texto": "Un operativo de la PDI permitió desarticular un punto de venta de drogas en la comuna de Pedro Aguirre Cerda, incautando cocaína, marihuana y armamento de fuego. Dos personas fueron detenidas.",
+        "autores": [
+            "F. Soto"
+        ],
+        "ubicacion": "Pedro Aguirre Cerda",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8tqXzu2s0cWyVluNyaJXo1I4gGJ7g5d3Yw&s"
+    },
+    {
+        "titulo": "Encuentran cadáver en sitio eriazo de Pedro Aguirre Cerda",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751545987,
+        "keywords": [
+            "fallecido"
+        ],
+        "pagina": "La Tercera",
+        "hipervinculo": "https://www.latercera.com",
+        "texto": "Vecinos alertaron a Carabineros por el hallazgo de un cuerpo sin vida en un terreno baldío de la comuna de Pedro Aguirre Cerda. La Brigada de Homicidios trabaja para identificar a la víctima y esclarecer la causa de muerte.",
+        "autores": [
+            "L. Pérez"
+        ],
+        "ubicacion": "Pedro Aguirre Cerda",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbB11dSXftc9k4V13lLJdvI_H7ghmCgh-FSA&s"
+    },
+    {
+        "titulo": "Allanamiento en Peñalolén termina con decomiso de droga y armas",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1752586387,
+        "keywords": [
+            "trafico de drogas"
+        ],
+        "pagina": "Radio Cooperativa",
+        "hipervinculo": "https://www.cooperativa.cl",
+        "texto": "Un operativo de la PDI permitió desarticular un punto de venta de drogas en la comuna de Peñalolén, incautando cocaína, marihuana y armamento de fuego. Dos personas fueron detenidas.",
+        "autores": [
+            "C. González"
+        ],
+        "ubicacion": "Peñalolén",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8tqXzu2s0cWyVluNyaJXo1I4gGJ7g5d3Yw&s"
+    },
+    {
+        "titulo": "Hombre es asesinado a balazos en plena vía pública en Peñalolén",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751286787,
+        "keywords": [
+            "homicidio"
+        ],
+        "pagina": "CNN Chile",
+        "hipervinculo": "https://www.cnnchile.com",
+        "texto": "La policía investiga el homicidio ocurrido anoche en la comuna de Peñalolén, donde un hombre fue atacado con múltiples disparos. La víctima falleció en el lugar y se presume que se trató de un ajuste de cuentas.",
+        "autores": [
+            "F. Soto"
+        ],
+        "ubicacion": "Peñalolén",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UncChsJObvnHhasemVyNUP26RBhfVe-WdQ&s"
+    },
+    {
+        "titulo": "Violento robo en local comercial deja un herido en Providencia",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751373187,
+        "keywords": [
+            "robo"
+        ],
+        "pagina": "Emol",
+        "hipervinculo": "https://www.emol.com",
+        "texto": "Tres sujetos armados ingresaron a un minimarket en Providencia, intimidando a los trabajadores y llevándose dinero en efectivo. Uno de los clientes resultó herido durante el asalto.",
+        "autores": [
+            "C. González"
+        ],
+        "ubicacion": "Providencia",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJm6xMwwQfsCuxalDN4tppnArZl4dnrxohfQ&s"
+    },
+    {
+        "titulo": "Hombre es asesinado a balazos en plena vía pública en Pudahuel",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750249987,
+        "keywords": [
+            "homicidio"
+        ],
+        "pagina": "CHV Noticias",
+        "hipervinculo": "https://www.chvnoticias.cl",
+        "texto": "La policía investiga el homicidio ocurrido anoche en la comuna de Pudahuel, donde un hombre fue atacado con múltiples disparos. La víctima falleció en el lugar y se presume que se trató de un ajuste de cuentas.",
+        "autores": [
+            "L. Pérez"
+        ],
+        "ubicacion": "Pudahuel",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UncChsJObvnHhasemVyNUP26RBhfVe-WdQ&s"
+    },
+    {
+        "titulo": "Violento robo en local comercial deja un herido en Pudahuel",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751286787,
+        "keywords": [
+            "robo"
+        ],
+        "pagina": "Radio Duna",
+        "hipervinculo": "https://www.duna.cl",
+        "texto": "Tres sujetos armados ingresaron a un minimarket en Pudahuel, intimidando a los trabajadores y llevándose dinero en efectivo. Uno de los clientes resultó herido durante el asalto.",
+        "autores": [
+            "C. González"
+        ],
+        "ubicacion": "Pudahuel",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJm6xMwwQfsCuxalDN4tppnArZl4dnrxohfQ&s"
+    },
+    {
+        "titulo": "Hombre es detenido por violencia intrafamiliar en Puente Alto",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1752413587,
+        "keywords": [
+            "violencia intrafamiliar"
+        ],
+        "pagina": "BioBio Chile",
+        "hipervinculo": "https://www.biobiochile.cl",
+        "texto": "Carabineros acudió a un domicilio en Puente Alto, tras una denuncia de vecinos por gritos y golpes. Un hombre fue arrestado por agredir a su pareja al interior del hogar.",
+        "autores": [
+            "B. Olivares"
+        ],
+        "ubicacion": "Puente Alto",
+        "imagen": "https://colombia.unir.net/wp-content/uploads/sites/4/2024/08/En-que-consiste-la-violencia-familiar3.jpg"
+    },
+    {
+        "titulo": "Hombre es asesinado a balazos en plena vía pública en Quinta Normal",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750249987,
+        "keywords": [
+            "homicidio"
+        ],
+        "pagina": "T13",
+        "hipervinculo": "https://www.t13.cl",
+        "texto": "La policía investiga el homicidio ocurrido anoche en la comuna de Quinta Normal, donde un hombre fue atacado con múltiples disparos. La víctima falleció en el lugar y se presume que se trató de un ajuste de cuentas.",
+        "autores": [
+            "M. Rojas"
+        ],
+        "ubicacion": "Quinta Normal",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UncChsJObvnHhasemVyNUP26RBhfVe-WdQ&s"
+    },
+    {
+        "titulo": "Allanamiento en Quinta Normal termina con decomiso de droga y armas",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750163587,
+        "keywords": [
+            "trafico de drogas"
+        ],
+        "pagina": "La Tercera",
+        "hipervinculo": "https://www.latercera.com",
+        "texto": "Un operativo de la PDI permitió desarticular un punto de venta de drogas en la comuna de Quinta Normal, incautando cocaína, marihuana y armamento de fuego. Dos personas fueron detenidas.",
+        "autores": [
+            "C. González"
+        ],
+        "ubicacion": "Quinta Normal",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8tqXzu2s0cWyVluNyaJXo1I4gGJ7g5d3Yw&s"
+    },
+    {
+        "titulo": "Allanamiento en Renca termina con decomiso de droga y armas",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750509187,
+        "keywords": [
+            "trafico de drogas"
+        ],
+        "pagina": "Radio Cooperativa",
+        "hipervinculo": "https://www.cooperativa.cl",
+        "texto": "Un operativo de la PDI permitió desarticular un punto de venta de drogas en la comuna de Renca, incautando cocaína, marihuana y armamento de fuego. Dos personas fueron detenidas.",
+        "autores": [
+            "M. Rojas"
+        ],
+        "ubicacion": "Renca",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8tqXzu2s0cWyVluNyaJXo1I4gGJ7g5d3Yw&s"
+    },
+    {
+        "titulo": "Allanamiento en San Joaquín termina con decomiso de droga y armas",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1750163587,
+        "keywords": [
+            "trafico de drogas"
+        ],
+        "pagina": "Emol",
+        "hipervinculo": "https://www.emol.com",
+        "texto": "Un operativo de la PDI permitió desarticular un punto de venta de drogas en la comuna de San Joaquín, incautando cocaína, marihuana y armamento de fuego. Dos personas fueron detenidas.",
+        "autores": [
+            "M. Rojas"
+        ],
+        "ubicacion": "San Joaquín",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8tqXzu2s0cWyVluNyaJXo1I4gGJ7g5d3Yw&s"
+    },
+    {
+        "titulo": "Hombre es asesinado a balazos en plena vía pública en San Miguel",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1751200387,
+        "keywords": [
+            "homicidio"
+        ],
+        "pagina": "CNN Chile",
+        "hipervinculo": "https://www.cnnchile.com",
+        "texto": "La policía investiga el homicidio ocurrido anoche en la comuna de San Miguel, donde un hombre fue atacado con múltiples disparos. La víctima falleció en el lugar y se presume que se trató de un ajuste de cuentas.",
+        "autores": [
+            "B. Olivares"
+        ],
+        "ubicacion": "San Miguel",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UncChsJObvnHhasemVyNUP26RBhfVe-WdQ&s"
+    },
+    {
+        "titulo": "Hombre es asesinado a balazos en plena vía pública en San Ramón",
+        "fecha_extraccion": 1752759187,
+        "fecha_publicacion": 1752327187,
+        "keywords": [
+            "homicidio"
+        ],
+        "pagina": "Radio ADN",
+        "hipervinculo": "https://www.adnradio.cl",
+        "texto": "La policía investiga el homicidio ocurrido anoche en la comuna de San Ramón, donde un hombre fue atacado con múltiples disparos. La víctima falleció en el lugar y se presume que se trató de un ajuste de cuentas.",
+        "autores": [
+            "A. Martínez"
+        ],
+        "ubicacion": "San Ramón",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UncChsJObvnHhasemVyNUP26RBhfVe-WdQ&s"
     }
 ]
