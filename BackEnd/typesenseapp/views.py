@@ -70,7 +70,8 @@ def buscar(request):
 
         query = {
             'q': texto if texto else '*',
-            'query_by': 'titulo, ubicacion, keywords, autores, texto, pagina'
+            'query_by': 'titulo, ubicacion, keywords, autores, texto, pagina',
+            'per_page': 250
         }
         if filtro_final:
             query['filter_by'] = filtro_final
