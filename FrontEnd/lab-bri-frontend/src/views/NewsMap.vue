@@ -167,9 +167,9 @@ export default {
             selectedDocType: null,
             selectedStatus: null,
             searchQuery: '',
-            comunaOptions: ['Estación Central', 'Santiago', 'Las Condes', 'Providencia', 'Nunoa', 'Maipú', 'Quilicura', 'Cerro Navia', 'Lo Barnechea', 'Vitacura', 'Lo Espejo', 'Recoleta', ],
+            comunaOptions: ['Cerrillos','Cerro Navia','Conchali','El Bosque','Estación Central','Huechuraba','Independencia','La Cisterna','La Florida','La Granja','La Pintana','La Reina', 'Las Condes', 'Lo Barnechea', 'Lo Espejo','Lo Prado','Macul', 'Maipú', 'Ñuñoa','Pedro Aguirre Cerda','Peñalolen','Providencia','Pudahuel', 'Quilicura','Quinta Normal','Recoleta','Renca','San Joaquin','San Miguel','San Ramon','Santiago','Vitacura'],
             crimeTypeOptions: ['Homicidio', 'Robo', 'Hurto', 'Violencia intrafamiliar', 'Tráfico de drogas', 'Fallecido'],
-            agencyOptions: ['PDI', 'Carabineros', 'Fiscalía', 'ECOH', 'T13', 'BioBio Chile', 'Radio Duna', 'Radio Cooperativa', 'El Dinamo', 'La Tercera', 'Emol', 'Radio ADN', 'CNN Chile'],
+            agencyOptions: ['ECOH', 'Radio Duna', 'El Dinamo', 'Emol', 'Radio ADN', 'BioBio Chile', 'CNN Chile', 'La Tercera','CHV Noticias','Mega Noticias', 'Radio Cooperativa', 'T13'],
             formattedStartDate: '',
             formattedEndDate: '',
         }
