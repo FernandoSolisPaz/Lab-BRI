@@ -218,23 +218,17 @@ export default {
 
                     // Lista de colores predefinidos
                     const colores = [
-                        '#8a2be2', '#7fff00', '#ff6347', '#ff4500', '#ff1493',
-                        '#00bfff', '#4682b4', '#2e8b57', '#ffd700', '#dc143c',
-                        '#ff8c00', '#9932cc', '#8b0000', '#3cb371', '#8fbc8f',
-                        '#20b2aa', '#d2691e', '#00fa9a', '#f08080', '#e9967a',
-                        '#dda0dd', '#b0c4de', '#ff69b4', '#a52a2a', '#ff00ff',
-                        '#ffdead', '#f5deb3', '#ffb6c1', '#c71585', '#add8e6',
-                        '#b22222', '#5f9ea0', '#f0e68c'
+                        '#8a2be2'
                     ];
 
-                    // // Llamamos a la función solo después de que los datos estén cargados
-                    // if (this.poligonos) {
-                    //     this.poligonos.forEach((comuna, index) => {
-                    //         const coords = comuna.geometria.coordinates[0];
-                    //         const color = colores[index % colores.length]; // Asegura que si hay más de 33 se repitan colores
-                    //         this.dibujarPoligono(coords, color);
-                    //     });
-                    // }
+                    // Llamamos a la función solo después de que los datos estén cargados
+                    if (this.poligonos) {
+                        this.poligonos.forEach((comuna, index) => {
+                            const coords = comuna.geometria.coordinates[0];
+                            const color = colores[index % colores.length]; // Asegura que si hay más de 33 se repitan colores
+                            this.dibujarPoligono(coords, color, /* clearPrevious */ false);
+                        });
+                    }
                 })
                 .catch(error => {
                     console.error('Error al obtener los poligonos:', error); // Manejamos errores
@@ -248,11 +242,26 @@ export default {
             const opciones = {
                 color: color,        // Borde del polígono
                 fillColor: color,    // Color de relleno del polígono
-                fillOpacity: 0.4,    // Opacidad del relleno
+                fillOpacity: 0.6,    // Opacidad del relleno
             };
 
             // Accede al método de Map.vue a través del ref
             this.$refs.map.putPolygon(coords, opciones, true, true, clearPrevious);
+        },
+
+        dibujarTodasBase() {
+            const colorBase = '#8a2be2';
+            this.poligonos.forEach((comuna, i) => {
+            const coords = comuna.geometria.coordinates[0];
+            this.dibujarPoligono(coords, colorBase, i === 0);
+            });
+        },
+        // (2) Resalta solo la comuna seleccionada
+        resaltarSeleccionada() {
+            if (!this.selectedComuna) return;
+            const sel = this.poligonos.find(p => p.nombre === this.selectedComuna);
+            if (!sel) return;
+            this.dibujarPoligono(sel.geometria.coordinates[0], 'purple', false);
         },
 
         onInputChange() {
@@ -288,13 +297,6 @@ export default {
                 .catch(error => {
                     console.error('Error al obtener las noticias:', error); // Manejamos errores
                 });
-
-            if (this.selectedComuna) {
-                const comuna = this.poligonos.find(p => p.nombre === this.selectedComuna);
-                if (comuna) {
-                    this.dibujarPoligono(comuna.geometria.coordinates[0], "purple"); // Dibuja el polígono con color morado
-                }
-            }
         },
 
         // Función para seleccionar una comuna aleatoria al cargar la página
@@ -302,6 +304,15 @@ export default {
             const randomIndex = Math.floor(Math.random() * this.comunaOptions.length);
             this.selectedComuna = this.comunaOptions[randomIndex]; // Selecciona aleatoriamente una comuna
             this.onInputChange(); // Llama a la función de cambio para que se ejecute la lógica
+        }
+    },
+    
+    watch: {
+    selectedComuna(newVal, oldVal) {
+        // 1) pinta todas en base
+        this.dibujarTodasBase();
+        // 2) sobrepinta solo la seleccionada
+        this.resaltarSeleccionada();
         }
     },
 
