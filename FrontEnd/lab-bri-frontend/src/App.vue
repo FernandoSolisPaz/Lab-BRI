@@ -6,7 +6,7 @@
         <v-avatar size="40" class="mr-2" @click="$router.push('/')" style="cursor: pointer;">
           <v-img :src="logoUrl" alt="UrbanitApps Logo"></v-img>
         </v-avatar>
-        DAILY SANTIAGO
+        URBANITAPPS
       </v-toolbar-title>
     </v-app-bar>
 

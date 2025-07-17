@@ -52,7 +52,7 @@
                             <v-col cols="12" md="2">
                                 <v-select v-model="selectedComuna" :items="['Selecciona...', ...comunaOptions]"
                                     label="Comuna" variant="outlined" density="compact" placeholder="Buscar comuna"
-                                    hide-details @update:modelValue="onInputChange"></v-select>
+                                    hide-details @update:modelValue="onMapClick"></v-select>
                             </v-col>
                             <v-col cols="12" md="2">
                                 <v-select v-model="selectedCrimeType" :items="['Selecciona...', ...crimeTypeOptions]"
@@ -262,9 +262,9 @@ export default {
             });
         },
 
-        resaltarSeleccionada(oldVal) {
-            if (!this.selectedComuna) return;
-            const sel = this.poligonos.find(p => p.nombre === this.selectedComuna);
+        resaltarSeleccionada(newVal, oldVal) {
+            if (!newVal) return;
+            const sel = this.poligonos.find(p => p.nombre === newVal);
             const prevcomuna = this.poligonos.find(p => p.nombre === oldVal);
             if (!sel) return;
             console.log(prevcomuna)
@@ -321,7 +321,7 @@ export default {
     watch: {
     selectedComuna(newVal, oldVal) {
 
-        this.resaltarSeleccionada(oldVal);
+        this.resaltarSeleccionada(newVal,oldVal);
         }
     },
 

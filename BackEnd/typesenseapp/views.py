@@ -18,7 +18,6 @@ def epoch_day_range(dt: datetime):
     end = datetime(dt.year, dt.month, dt.day, 23, 59, 59)
     return int(time.mktime(start.timetuple())), int(time.mktime(end.timetuple()))
 
-
 @csrf_exempt
 def buscar(request):
     if request.method == 'POST':
