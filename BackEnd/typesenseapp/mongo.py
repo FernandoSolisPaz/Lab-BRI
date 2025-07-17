@@ -1,9 +1,8 @@
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
+from mongoengine import connect
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
 mongo_uri = os.getenv('MONGO_URI')
-conn = MongoClient(mongo_uri, server_api=ServerApi('1'))
+conn = connect(host=mongo_uri)
