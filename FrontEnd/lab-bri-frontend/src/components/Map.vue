@@ -111,7 +111,7 @@ export default {
       this.circleGroup.addLayer(circle); // Agrega el círculo al grupo
     },
 
-    putPolygon(polygon, options = {}, invert = false, zoomToFit = true, clearPrevious = true) {
+    putPolygon(polygon, options = {}, invert = false, zoomToFit = true, clearPrevious = true, comunaNombre = null) {
       // Solo limpia los polígonos previos si clearPrevious es verdadero
       if (clearPrevious) {
         this.polygonGroup.clearLayers();
@@ -130,6 +130,13 @@ export default {
         : polygon;
 
       const leafletPolygon = L.polygon(coords, mergedOptions);
+
+        if (comunaNombre) {
+          leafletPolygon.on('click', () => {
+            this.$emit('poligono-click', comunaNombre);
+          });
+        }
+
       this.polygonGroup.addLayer(leafletPolygon);
 
       // Centrar y hacer zoom al polígono

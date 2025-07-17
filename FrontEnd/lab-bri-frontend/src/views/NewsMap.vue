@@ -132,7 +132,7 @@
 
             <!-- Columna derecha: MAPA -->
             <v-col cols="12" md="9" class="pa-1 fill-height">
-                <Map ref="map" />
+                <Map ref="map" @poligono-click="onMapClick" />
             </v-col>
 
         </v-row>
@@ -206,6 +206,11 @@ export default {
             this.$router.push({ name: 'newsview' });
         },
 
+        onMapClick(comunaNombre) {
+            this.selectedComuna = comunaNombre;
+            this.onInputChange();
+        },
+
         async obtenerPoligonos() {
             // Se obtienen las comunas
             appService.listarComunas()
@@ -226,7 +231,7 @@ export default {
                         this.poligonos.forEach((comuna, index) => {
                             const coords = comuna.geometria.coordinates[0];
                             const color = colores[index % colores.length]; // Asegura que si hay más de 33 se repitan colores
-                            this.dibujarPoligono(coords, color, /* clearPrevious */ false);
+                            this.dibujarPoligono(coords, color, /* clearPrevious */ false, comuna.nombre);
                         });
                     }
                 })
@@ -235,7 +240,7 @@ export default {
                 });
         },
 
-        dibujarPoligono(poligon, color = "purple", clearPrevious = true) {
+        dibujarPoligono(poligon, color = "purple", clearPrevious = true, comunaNombre = null) {
             const coords = poligon;
 
             // Usamos el color pasado como argumento
@@ -246,22 +251,22 @@ export default {
             };
 
             // Accede al método de Map.vue a través del ref
-            this.$refs.map.putPolygon(coords, opciones, true, true, clearPrevious);
+            this.$refs.map.putPolygon(coords, opciones, true, true, clearPrevious, comunaNombre);
         },
 
         dibujarTodasBase() {
             const colorBase = '#8a2be2';
             this.poligonos.forEach((comuna, i) => {
             const coords = comuna.geometria.coordinates[0];
-            this.dibujarPoligono(coords, colorBase, i === 0);
+            this.dibujarPoligono(coords, colorBase, i === 0, comuna.nombre);
             });
         },
-        // (2) Resalta solo la comuna seleccionada
+
         resaltarSeleccionada() {
             if (!this.selectedComuna) return;
             const sel = this.poligonos.find(p => p.nombre === this.selectedComuna);
             if (!sel) return;
-            this.dibujarPoligono(sel.geometria.coordinates[0], 'purple', false);
+            this.dibujarPoligono(sel.geometria.coordinates[0], 'purple', false, sel.nombre);
         },
 
         onInputChange() {
@@ -309,9 +314,8 @@ export default {
     
     watch: {
     selectedComuna(newVal, oldVal) {
-        // 1) pinta todas en base
         this.dibujarTodasBase();
-        // 2) sobrepinta solo la seleccionada
+
         this.resaltarSeleccionada();
         }
     },
