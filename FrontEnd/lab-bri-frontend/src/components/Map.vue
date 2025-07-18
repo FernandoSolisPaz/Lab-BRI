@@ -125,7 +125,7 @@ export default {
       this.polygonGroup.removeLayer(leafletId);
     },
 
-    putPolygon(polygon, options = {}, invert = false, zoomToFit = true, clearPrevious = true, comunaNombre = null) {
+    putPolygon(polygon, options = {}, invert = false, zoomToFit = true, clearPrevious = true, comunaNombre = null, heatmapMode = false) {
       // Solo limpia los polígonos previos si clearPrevious es verdadero
       if (clearPrevious) {
         this.polygonGroup.clearLayers();
@@ -146,7 +146,7 @@ export default {
       const leafletPolygon = L.polygon(coords, mergedOptions);
       leafletPolygon._comunaNombre = comunaNombre;
 
-        if (comunaNombre) {
+        if (comunaNombre && !heatmapMode) {
           leafletPolygon.on('click', () => {
             this.$emit('poligono-click', comunaNombre);
           });

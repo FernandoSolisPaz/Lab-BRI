@@ -9,36 +9,40 @@
                         <v-row>
                             <v-col cols="12" md="3">
                                 <div class="d-flex align-center">
-                                    <v-menu class="flex-grow-1" v-model="dateMenuStart" :close-on-content-click="false" transition="scale-transition"
-                                    offset-y content-class="compact-datepicker-menu">
-                                    <template #activator="{ props }"> <v-text-field v-bind="props" v-model="formattedStartDate" label="Seleccionar fecha inicial"
-                                        readonly density="compact" hide-details @update:modelValue="onInputChange">
-                                        <template #prepend-inner>
-                                            <i class="pi pi-calendar-clock" />
+                                    <v-menu class="flex-grow-1" v-model="dateMenuStart" :close-on-content-click="false"
+                                        transition="scale-transition" offset-y content-class="compact-datepicker-menu">
+                                        <template #activator="{ props }"> <v-text-field v-bind="props"
+                                                v-model="formattedStartDate" label="Seleccionar fecha inicial" readonly
+                                                density="compact" hide-details @update:modelValue="onInputChange">
+                                                <template #prepend-inner>
+                                                    <i class="pi pi-calendar-clock" />
+                                                </template>
+                                            </v-text-field>
                                         </template>
-                                        </v-text-field>
-                                    </template>
-                                    <v-date-picker v-model="selectedStartDate" @update:model-value="dateMenuStart = false" :show-adjacent-months="false"
-                                        hide-header @update:modelValue="onInputChange"/>
+                                        <v-date-picker v-model="selectedStartDate"
+                                            @update:model-value="dateMenuStart = false" :show-adjacent-months="false"
+                                            hide-header @update:modelValue="onInputChange" />
                                     </v-menu>
                                     <v-tooltip bottom>
-                                    <template #activator="{ props, on }">
-                                        <v-icon v-bind="props" v-on="on" class="ml-2" small>
-                                            mdi-help-circle-outline
-                                        </v-icon>
-                                    </template>
-                                    <span>
-                                        En caso de seleccionar únicamente fecha inicial, se tomará como fecha exacta de búsqueda
-                                    </span>
+                                        <template #activator="{ props, on }">
+                                            <v-icon v-bind="props" v-on="on" class="ml-2" small>
+                                                mdi-help-circle-outline
+                                            </v-icon>
+                                        </template>
+                                        <span>
+                                            En caso de seleccionar únicamente fecha inicial, se tomará como fecha exacta
+                                            de búsqueda
+                                        </span>
                                     </v-tooltip>
                                 </div>
                             </v-col>
                             <v-col cols="12" md="2">
-                                <v-menu v-model="dateMenuEnd" :close-on-content-click="false" transition="scale-transition"
-                                    offset-y content-class="compact-datepicker-menu">
+                                <v-menu v-model="dateMenuEnd" :close-on-content-click="false"
+                                    transition="scale-transition" offset-y content-class="compact-datepicker-menu">
                                     <template v-slot:activator="{ props }">
-                                        <v-text-field v-bind="props" v-model="formattedEndDate" label="Seleccionar fecha final" :disabled="!selectedStartDate"
-                                            readonly density="compact" hide-details @update:modelValue="onInputChange">
+                                        <v-text-field v-bind="props" v-model="formattedEndDate"
+                                            label="Seleccionar fecha final" :disabled="!selectedStartDate" readonly
+                                            density="compact" hide-details @update:modelValue="onInputChange">
                                             <template #prepend-inner>
                                                 <i class="pi pi-calendar-clock"></i>
                                             </template>
@@ -73,7 +77,7 @@
                             <v-col cols="12" md="4">
                                 <v-text-field v-model="searchQuery" placeholder="Buscar noticias..." variant="outlined"
                                     density="compact" clearable hide-details @update:modelValue="onInputChange"
-                                            :style="{ borderColor: 'black' }">
+                                    :style="{ borderColor: 'black' }">
                                     <template #prepend-inner>
                                         <i class="pi pi-search"></i>
                                     </template>
@@ -82,6 +86,14 @@
                                     </template>
                                 </v-text-field>
                             </v-col>
+
+                            <v-col cols="12" md="8" class="d-flex justify-end align-center">
+                    
+                                <v-switch v-model="heatmapMode" :color="heatmapMode ? 'red' : undefined"
+                                    label="Activar modo mapa de calor" @update:modelValue="toggleHeatmapMode"
+                                    hide-details inset />
+                            </v-col>
+
                         </v-row>
                     </v-card-text>
                 </v-card>
@@ -167,11 +179,12 @@ export default {
             selectedDocType: null,
             selectedStatus: null,
             searchQuery: '',
-            comunaOptions: ['Cerrillos','Cerro Navia','Conchalí','El Bosque','Estación Central','Huechuraba','Independencia','La Cisterna','La Florida','La Granja','La Pintana','La Reina', 'Las Condes', 'Lo Barnechea', 'Lo Espejo','Lo Prado','Macul', 'Maipú', 'Ñuñoa','Pedro Aguirre Cerda','Peñalolén','Providencia','Pudahuel', 'Quilicura','Quinta Normal','Recoleta','Renca','San Joaquín','San Miguel','San Ramón','Santiago','Vitacura'],
+            comunaOptions: ['Cerrillos', 'Cerro Navia', 'Conchalí', 'El Bosque', 'Estación Central', 'Huechuraba', 'Independencia', 'La Cisterna', 'La Florida', 'La Granja', 'La Pintana', 'La Reina', 'Las Condes', 'Lo Barnechea', 'Lo Espejo', 'Lo Prado', 'Macul', 'Maipú', 'Ñuñoa', 'Pedro Aguirre Cerda', 'Peñalolén', 'Providencia', 'Pudahuel', 'Quilicura', 'Quinta Normal', 'Recoleta', 'Renca', 'San Joaquín', 'San Miguel', 'San Ramón', 'Santiago', 'Vitacura'],
             crimeTypeOptions: ['Homicidio', 'Robo', 'Hurto', 'Violencia intrafamiliar', 'Tráfico de drogas', 'Asesinato'],
-            agencyOptions: ['ECOH', 'Radio Duna', 'El Dinamo', 'Emol', 'Radio ADN', 'BioBio Chile', 'CNN Chile', 'La Tercera','CHV Noticias','Mega Noticias', 'Radio Cooperativa', 'T13'],
+            agencyOptions: ['ECOH', 'Radio Duna', 'El Dinamo', 'Emol', 'Radio ADN', 'BioBio Chile', 'CNN Chile', 'La Tercera', 'CHV Noticias', 'Mega Noticias', 'Radio Cooperativa', 'T13'],
             formattedStartDate: '',
             formattedEndDate: '',
+            heatmapMode: false,
         }
     },
 
@@ -248,7 +261,7 @@ export default {
             const opciones = {
                 color: color,        // Borde del polígono
                 fillColor: color,    // Color de relleno del polígono
-                fillOpacity: 0.6,    // Opacidad del relleno
+                fillOpacity: 0.5,    // Opacidad del relleno
             };
 
             // Accede al método de Map.vue a través del ref
@@ -258,21 +271,24 @@ export default {
         dibujarTodasBase() {
             const colorBase = '#8a2be2';
             this.poligonos.forEach((comuna, i) => {
-            const coords = comuna.geometria.coordinates[0];
-            this.dibujarPoligono(coords, colorBase, i === 0, comuna.nombre);
+                const coords = comuna.geometria.coordinates[0];
+                this.dibujarPoligono(coords, colorBase, i === 0, comuna.nombre);
             });
         },
 
         resaltarSeleccionada(newVal, oldVal) {
-            if (!newVal) return;
+            if (this.heatmapMode) return;
+            if (!newVal || newVal === "Selecciona...") return;
+
             const sel = this.poligonos.find(p => p.nombre === newVal);
             const prevcomuna = this.poligonos.find(p => p.nombre === oldVal);
+
             if (!sel) return;
-            console.log(prevcomuna)
-            if (oldVal){
+
+            if (oldVal && oldVal !== "Selecciona..." && prevcomuna) {
                 this.$refs.map.removePolygonByComuna(oldVal);
-            
             }
+
             this.dibujarPoligono(sel.geometria.coordinates[0], 'purple', false, sel.nombre);
         },
 
@@ -289,13 +305,13 @@ export default {
                 before_date: "",
             };
 
-             // Si solo hay fecha "Desde" seleccionada → exact_date
+            // Si solo hay fecha "Desde" seleccionada → exact_date
             if (this.selectedStartDate && !this.selectedEndDate) {
                 query.exact_date = this.selectedStartDate;
             }
             // Si hay rango completo → after_date = Desde, before_date = Hasta
             else if (this.selectedStartDate && this.selectedEndDate) {
-                query.after_date  = this.selectedStartDate;
+                query.after_date = this.selectedStartDate;
                 query.before_date = this.selectedEndDate;
             }
 
@@ -316,13 +332,75 @@ export default {
             const randomIndex = Math.floor(Math.random() * this.comunaOptions.length);
             this.selectedComuna = this.comunaOptions[randomIndex]; // Selecciona aleatoriamente una comuna
             this.onInputChange(); // Llama a la función de cambio para que se ejecute la lógica
-        }
-    },
-    
-    watch: {
-    selectedComuna(newVal, oldVal) {
+        },
 
-        this.resaltarSeleccionada(newVal,oldVal);
+        getHeatmapColor(value) {
+            const r = 255;
+            // Verde va de 255 → 165 → 0 dependiendo del valor
+            let g;
+            if (value < 0.5) {
+                g = 255 - value * 2 * (255 - 165); // Amarillo a Naranjo
+            } else {
+                g = 165 - (value - 0.5) * 2 * 165; // Naranjo a Rojo
+            }
+            g = Math.max(0, Math.floor(g)); // Asegura que no sea negativo
+            return `rgb(${r},${g},0)`;
+        },
+
+        async toggleHeatmapMode(isActive) {
+            if (!isActive) {
+                this.dibujarTodasBase(); // Vuelve a colorear los polígonos base
+                this.resaltarSeleccionada(this.selectedComuna, null);
+                return;
+            }
+
+            try {
+                const response = await appService.buscarDocumento({
+                    texto: "", pagina: "", ubicacion: "", keywords: [""]
+                });
+
+                const noticias = response.data.hits;
+
+                const conteoPorComuna = {};
+                noticias.forEach(n => {
+                    const comuna = n.document.ubicacion;
+                    if (comuna) conteoPorComuna[comuna] = (conteoPorComuna[comuna] || 0) + 1;
+                });
+
+                const valores = Object.values(conteoPorComuna);
+                const max = Math.max(...valores);
+                const min = Math.min(...valores);
+
+                this.$refs.map.clearMarkers();
+
+                this.poligonos.forEach(p => {
+                    const cantidad = conteoPorComuna[p.nombre] || 0;
+                    const normalized = max === min ? 0 : (cantidad - min) / (max - min);
+                    const color = this.getHeatmapColor(normalized);
+                    this.dibujarPoligono(p.geometria.coordinates[0], color, false, p.nombre);
+                });
+
+            } catch (error) {
+                console.error("Error al cargar datos de mapa de calor", error);
+            }
+        },
+    },
+
+    watch: {
+        selectedComuna(newVal, oldVal) {
+            // Si está activado el mapa de calor, no hacer nada
+            if (this.heatmapMode) return;
+
+            // Si se selecciona "Selecciona...", eliminar el anterior si existe
+            if (newVal === "Selecciona...") {
+                if (oldVal && oldVal !== "Selecciona...") {
+                    this.$refs.map.removePolygonByComuna(oldVal);
+                }
+                return;
+            }
+
+            // Si se selecciona una comuna válida
+            this.resaltarSeleccionada(newVal, oldVal);
         }
     },
 
@@ -336,12 +414,12 @@ export default {
         formattedStartDate() {
             if (!this.selectedStartDate) return ''
             const d = new Date(this.selectedStartDate)
-            return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`
+            return `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`
         },
         formattedEndDate() {
             if (!this.selectedEndDate) return ''
             const d = new Date(this.selectedEndDate)
-            return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`
+            return `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`
         }
     },
 }
