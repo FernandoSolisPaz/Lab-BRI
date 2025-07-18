@@ -35,7 +35,7 @@ def buscar(request):
         if data.get('titulo'):
             filtros.append(f'titulo:={data["titulo"]}')
         if data.get('ubicacion'):
-            filtros.append(f'ubicacion:={data.get('ubicacion')}')
+            filtros.append(f'ubicacion:={data.get("ubicacion")}')
         if data.get('pagina'):
             filtros.append(f'pagina:={data["pagina"]}')
 

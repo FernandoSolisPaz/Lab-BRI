@@ -167,8 +167,8 @@ export default {
             selectedDocType: null,
             selectedStatus: null,
             searchQuery: '',
-            comunaOptions: ['Cerrillos','Cerro Navia','Conchali','El Bosque','Estación Central','Huechuraba','Independencia','La Cisterna','La Florida','La Granja','La Pintana','La Reina', 'Las Condes', 'Lo Barnechea', 'Lo Espejo','Lo Prado','Macul', 'Maipú', 'Ñuñoa','Pedro Aguirre Cerda','Peñalolen','Providencia','Pudahuel', 'Quilicura','Quinta Normal','Recoleta','Renca','San Joaquin','San Miguel','San Ramon','Santiago','Vitacura'],
-            crimeTypeOptions: ['Homicidio', 'Robo', 'Hurto', 'Violencia intrafamiliar', 'Tráfico de drogas', 'Fallecido'],
+            comunaOptions: ['Cerrillos','Cerro Navia','Conchalí','El Bosque','Estación Central','Huechuraba','Independencia','La Cisterna','La Florida','La Granja','La Pintana','La Reina', 'Las Condes', 'Lo Barnechea', 'Lo Espejo','Lo Prado','Macul', 'Maipú', 'Ñuñoa','Pedro Aguirre Cerda','Peñalolén','Providencia','Pudahuel', 'Quilicura','Quinta Normal','Recoleta','Renca','San Joaquín','San Miguel','San Ramón','Santiago','Vitacura'],
+            crimeTypeOptions: ['Homicidio', 'Robo', 'Hurto', 'Violencia intrafamiliar', 'Tráfico de drogas', 'Asesinato'],
             agencyOptions: ['ECOH', 'Radio Duna', 'El Dinamo', 'Emol', 'Radio ADN', 'BioBio Chile', 'CNN Chile', 'La Tercera','CHV Noticias','Mega Noticias', 'Radio Cooperativa', 'T13'],
             formattedStartDate: '',
             formattedEndDate: '',
@@ -208,6 +208,7 @@ export default {
 
         onMapClick(comunaNombre) {
             this.selectedComuna = comunaNombre;
+            console.log("onMapClick", this.selectedComuna)
             this.onInputChange();
         },
 
